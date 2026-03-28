@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Georgia, serif;
     line-height: 1.6;
-    color: #333;
+    color: #2c3e50;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
 }
@@ -18,16 +18,67 @@ body {
     padding: 0 20px;
 }
 
+/* ============ TAMIL & ENGLISH TEXT STYLES ============ */
+.tamil-text {
+    font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+    font-size: 1rem;
+    color: inherit;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.tamil-small {
+    font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+    font-size: 0.85rem;
+    color: inherit;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.tamil-heading {
+    font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+    font-size: 1.3rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.tamil-subheading {
+    font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+    font-size: 1rem;
+    display: block;
+    margin-top: 0.3rem;
+    opacity: 0.9;
+}
+
+.tamil-nav {
+    font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.english-text {
+    font-family: Georgia, serif;
+    font-style: italic;
+    display: block;
+}
+
+.english-small {
+    font-size: 0.85rem;
+    display: block;
+}
+
 /* ============ NAVIGATION ============ */
 .navbar {
-    background: linear-gradient(90deg, #ff6b6b 0%, #ffa94d 25%, #ffd93d 50%, #6bcf7f 75%, #4d96ff 100%);
+    background: linear-gradient(90deg, #d4af37 0%, #ff6b6b 20%, #ffa94d 40%, #ffd93d 60%, #6bcf7f 80%, #4d96ff 100%);
     color: #fff;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: slideDown 0.5s ease-out;
+    border-bottom: 3px solid #8b4513;
 }
 
 @keyframes slideDown {
@@ -48,23 +99,30 @@ body {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: bounce 2s infinite;
+    line-height: 1.2;
+}
+
+.logo .subtitle {
+    font-size: 1rem;
+    display: block;
+    font-family: Georgia, serif;
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-links a {
@@ -72,9 +130,10 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 5px;
+    line-height: 1.2;
 }
 
 .nav-links a:hover,
@@ -86,9 +145,9 @@ body {
 
 /* ============ HERO SECTION ============ */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background: linear-gradient(135deg, #d4af37 0%, #667eea 25%, #764ba2 50%, #f093fb 75%, #4facfe 100%);
     color: #fff;
-    padding: 8rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -116,11 +175,27 @@ body {
     z-index: 1;
 }
 
+.rangoli-top, .rangoli-bottom {
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+    margin: 1rem 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     animation: fadeInDown 1s ease-out;
+    font-family: Georgia, serif;
+    line-height: 1.2;
 }
 
 @keyframes fadeInDown {
@@ -135,10 +210,11 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.95;
     animation: fadeInUp 1s ease-out 0.2s both;
+    font-family: Georgia, serif;
 }
 
 @keyframes fadeInUp {
@@ -152,35 +228,66 @@ body {
     }
 }
 
-.dancing-element {
+.dancing-mudra {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.mudra {
+    animation: mudraFlow 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes mudraFlow {
+    0%, 100% { transform: rotate(-10deg) translateY(0); }
+    50% { transform: rotate(10deg) translateY(-10px); }
+}
+
+.mudra-text {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    line-height: 1.3;
+}
+
+.classic-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     margin: 2rem 0;
-    font-size: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.dance-emoji {
-    animation: dance 1.5s ease-in-out infinite;
+.icon-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-.dance-emoji:nth-child(1) {
-    animation-delay: 0s;
+.icon-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
 }
 
-.dance-emoji:nth-child(2) {
-    animation-delay: 0.2s;
+.icon-item span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.dance-emoji:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes dance {
-    0%, 100% { transform: rotate(-5deg) translateY(0); }
-    25% { transform: rotate(5deg) translateY(-10px); }
-    50% { transform: rotate(-5deg) translateY(0); }
-    75% { transform: rotate(5deg) translateY(-10px); }
+.icon-item p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .hero-buttons {
@@ -201,7 +308,7 @@ body {
     display: inline-block;
     cursor: pointer;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -218,7 +325,6 @@ body {
 .btn-secondary {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: #fff;
-    border: 2px solid #fff;
 }
 
 .btn-secondary:hover {
@@ -227,9 +333,9 @@ body {
 }
 
 .btn-cta {
-    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background: linear-gradient(135deg, #d4af37 0%, #f5576c 100%);
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 1.2rem 2.5rem;
 }
 
@@ -246,11 +352,13 @@ body {
 }
 
 .section-title {
-    color: #333;
-    font-size: 2.5rem;
+    color: #2c3e50;
+    font-size: 2.2rem;
     margin-bottom: 3rem;
     text-align: center;
     position: relative;
+    font-family: Georgia, serif;
+    line-height: 1.3;
 }
 
 .section-title::after {
@@ -258,14 +366,23 @@ body {
     display: block;
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffd93d);
+    background: linear-gradient(90deg, #d4af37, #ff6b6b, #ffa94d);
     margin: 1rem auto 0;
     border-radius: 2px;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin: -2rem 0 2rem 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+
 .highlights .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -279,6 +396,7 @@ body {
     animation: floatUp 1s ease-out both;
     position: relative;
     overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .highlight-card::before {
@@ -311,6 +429,7 @@ body {
 .highlight-card:nth-child(1) { animation-delay: 0.1s; }
 .highlight-card:nth-child(2) { animation-delay: 0.2s; }
 .highlight-card:nth-child(3) { animation-delay: 0.3s; }
+.highlight-card:nth-child(4) { animation-delay: 0.4s; }
 
 .highlight-card:hover {
     transform: translateY(-10px);
@@ -329,8 +448,12 @@ body {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-.highlight-card .icon {
-    font-size: 3rem;
+.card-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #c9a12f 100%);
+}
+
+.icon-large {
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: spin 3s linear infinite;
     position: relative;
@@ -343,29 +466,78 @@ body {
 }
 
 .highlight-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
+    font-family: Georgia, serif;
+    line-height: 1.2;
 }
 
 .highlight-card p {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     opacity: 0.95;
     position: relative;
     z-index: 1;
+    line-height: 1.4;
+}
+
+/* ============ MUDRA SECTION ============ */
+.mudra-section {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 4rem 0;
+}
+
+.mudra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.mudra-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #d4af37;
+}
+
+.mudra-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.mudra-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.mudra-item h4 {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.mudra-item p {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 /* ============ STATS SECTION ============ */
 .stats {
-    background: linear-gradient(90deg, #ff6b6b 0%, #ffa94d 25%, #ffd93d 50%, #6bcf7f 75%, #4d96ff 100%);
+    background: linear-gradient(90deg, #d4af37 0%, #ff6b6b 20%, #ffa94d 40%, #ffd93d 60%, #6bcf7f 80%, #4d96ff 100%);
     padding: 3rem 0;
     color: #fff;
 }
 
 .stats .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2rem;
     text-align: center;
 }
@@ -376,6 +548,7 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .stat-box:hover {
@@ -383,38 +556,56 @@ body {
     transform: scale(1.05);
 }
 
-.stat-box h3 {
+.stat-icon {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    animation: spin 3s linear infinite;
+}
+
+.stat-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, serif;
 }
 
 .stat-box p {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     opacity: 0.9;
+    line-height: 1.3;
 }
 
 /* ============ CTA SECTION ============ */
 .cta-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #d4af37 100%);
+    padding: 3rem 2rem;
     text-align: center;
     color: #fff;
 }
 
+.rangoli-cta-top, .rangoli-cta-bottom {
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+    margin: 1rem 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, serif;
+    line-height: 1.3;
 }
 
 .cta-section p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
     opacity: 0.95;
+    line-height: 1.4;
 }
 
 /* ============ FOOTER ============ */
 footer {
-    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #8b4513 100%);
     color: #fff;
     text-align: center;
     padding: 2rem;
@@ -433,9 +624,23 @@ footer {
     }
 }
 
-footer p {
-    font-size: 1.1rem;
+.footer-content {
     margin-bottom: 1rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: Georgia, serif;
+    line-height: 1.4;
+}
+
+.footer-closing {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    animation: pulse 2s ease-in-out infinite;
+    line-height: 1.3;
 }
 
 .social-icons {
@@ -443,6 +648,7 @@ footer p {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    margin: 1rem 0;
 }
 
 .social-icon {
@@ -462,26 +668,25 @@ footer p {
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .nav-links {
-        gap: 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    .btn {
-        padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
 
-    .dancing-element {
-        gap: 1rem;
-        font-size: 2rem;
+    .nav-links {
+        gap: 0.3rem;
+        font-size: 0.75rem;
+    }
+
+    .classic-icons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .icon-item p {
+        font-size: 0.7rem;
     }
 
     .hero-buttons {
@@ -490,5 +695,28 @@ footer p {
 
     .btn {
         width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .mudra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rangoli-top, .rangoli-bottom {
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo .subtitle {
+        font-size: 0.8rem;
     }
 }
